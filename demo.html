@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/watermark.min.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log(watermarkObj)
+    watermarkObj.watermark({
+  id: 'wm_div_id', // 水印总体的id
+  text: '测1\n试水2\n印测试水印测试水印3 测试水印测试水印', // 水印的内容 使用空格换行
+  transparency: 0.15, // 水印透明度
+  fontSize: 16, // 水印字体大小，以px为单位
+  parentLeft: 0, // 水印整体左边距离
+  parentTop: 0, // 水印整体顶边距离
+  parentRight: 0, // 水印整体右边距离
+  parentBottom: 0, // 水印整体顶边距离
+  singleWidth: 200, // 单个水印宽度
+  singleHeight: 200, // 单个水印长度
+  slope: -30, // 水印倾斜度数
+  parentSelector: null, // 水印插件挂载的父元素选取器,不输入则默认挂在body上
+})
+</script>
+</html>
