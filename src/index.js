@@ -25,3 +25,10 @@ export function watermark(settings = {}) {
         }, false)
     }
 }
+/* 删除水印 */
+export function removeWatermark(watermarkId) {
+    const watermarkDom = document.getElementById(watermarkId)
+    if (watermarkDom) {
+        watermarkDom.parentNode.removeChild(watermarkDom)
+    }
+}

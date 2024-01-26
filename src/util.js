@@ -23,7 +23,7 @@ const canvasTextAutoLine = parameterObj => {
       ctx.fillText(str.substring(lastSubStrIndex, i + 1), initX, initY)
     }
     //空格换行
-    if (str[i] == " ") {
+    if (str[i] == "\n") {
       lineWidth = 0
       ctx.fillText(str.slice(lastSubStrIndex, i), initX, initY)
       initY += lineHeight
