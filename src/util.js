@@ -14,16 +14,16 @@ const canvasTextAutoLine = parameterObj => {
   for (let i = 0; i < str.length; i++) {
     lineWidth += ctx.measureText(str[i]).width
     if (lineWidth > canvasWidth - 50) { // 考虑边界需加50的buffer
-      ctx.fillText(str.slice(lastSubStrIndex, i), initX, initY)
-      initY += lineHeight
-      lineWidth = 0
-      lastSubStrIndex = i
+    //   ctx.fillText(str.slice(lastSubStrIndex, i), initX, initY)
+    //   initY += lineHeight
+    //   lineWidth = 0
+    //   lastSubStrIndex = i
     }
     if (i == str.length - 1) {
       ctx.fillText(str.substring(lastSubStrIndex, i + 1), initX, initY)
     }
-    //空格换行
-    if (str[i] == "\n") {
+    //-换行
+    if (str[i] == "-") {
       lineWidth = 0
       ctx.fillText(str.slice(lastSubStrIndex, i), initX, initY)
       initY += lineHeight
