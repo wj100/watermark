@@ -10,6 +10,7 @@ const DEFAULT_SETTINGS = {
   singleWidth: 200, // 单个水印宽度
   singleHeight: 200, // 单个水印长度
   slope: -15, // 水印倾斜度数
+  zIndex: 9999, // 水印的z-index
   parentSelector: null, // 水印插件挂载的父元素选取器,不输入则默认挂在body上
 }
 

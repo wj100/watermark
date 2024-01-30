@@ -38,10 +38,10 @@ export default function loadMark (settings) {
   ctx.translate(-canvas.width / 2, -canvas.height / 2)
   ctx.textAlign = 'center'
 
-  // 水印换行的情况下计算行高（考虑间隙加上5）
-  const lineHeight = newSettings.fontSize + 5
+  // 水印换行的情况下计算行高（考虑间隙加上5） 5改成动态计算
+  const lineHeight = newSettings.fontSize + newSettings.fontSize/3
   // 计算水印在y轴上的初始位置(考虑间隙加上5)
-  const initY = Math.ceil(Math.abs(Math.sin(angle) * newSettings.singleHeight)) + 5
+  const initY = Math.ceil(Math.abs(Math.sin(angle) * newSettings.singleHeight)) + newSettings.fontSize/3
   // 水印文字太长则换行显示(第三个参数必须为canvas宽度的一半，要不然无法居中)
   const parameterObj = {
     str: newSettings.text,
@@ -56,7 +56,7 @@ export default function loadMark (settings) {
 
   maskDiv.id = newSettings.id
   maskDiv.style.position = 'absolute'
-  maskDiv.style.zIndex = '9999'
+  maskDiv.style.zIndex = newSettings.zIndex
   maskDiv.style.top = `${newSettings.parentTop}px`
   maskDiv.style.right = `${newSettings.parentRight}px`
   maskDiv.style.bottom = `${newSettings.parentBottom}px`
