@@ -55,6 +55,7 @@ watermark({ text: "测试水印" })
   singleWidth: 200, // 单个水印宽度
   singleHeight: 200, // 单个水印长度
   slope: -15, // 水印倾斜度数
+  zIndex:999,//水印层级
   parentSelector: null, // 水印插件挂载的父元素选取器,不输入则默认挂在body上
 }
 ```
@@ -70,3 +71,15 @@ watermark({ text: "测试水印" })
   Chrome、FireFox、Safari、IE10及以上浏览器支持全部功能
 
   IE10及以下不支持水印被用户手动调用开发者工具删除水印dom的情况 
+
+## 四、提供方法
+#### 生成水印 
+watermark(config)
+#### 删除水印 
+removeWatermark(watermarkId)
+#### 获取水印配置 
+getWatermarkConfig(watermarkId)
+#### 动态计算水印宽高
+多行不固定文本时根据文字动态计算水印宽高 可配置水印疏密度 
+getSingleWH(text , density/100)('width')
+

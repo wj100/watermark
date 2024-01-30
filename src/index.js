@@ -37,3 +37,40 @@ export function removeWatermark(watermarkId) {
 export function getWatermarkConfig(watermarkId) {
     return customSettingMap.get(watermarkId)
  }
+/**
+ * 动态水印时 计算单个水印的宽高
+ * @param {水印文本 以-为分隔符} text 
+ * @param {疏密度百分比} percent 
+ * @param {基础值，将percent与base相乘} base 
+ * @returns function('width'/'height')
+ */
+export function getSingleWH(text,percent=0,base=1) {
+    const calculateStringLength = (str) => {
+        let length = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charAt(i);
+            // 使用正则表达式判断是否是中文字符
+            if (/[\u4e00-\u9fa5]/.test(char)) {
+                length += 2;
+            } else {
+                length += 1;
+            }
+        }
+        return length;
+    };
+    //将字符串 text 以-为分隔符分割成数组，取出计算后的最大长度
+    const tArr = text.split('-')
+    const tArrLength = tArr.map(item => calculateStringLength(item))
+    const tArrLengthMax = Math.max(...tArrLength)
+    //计算出水印的宽度
+    const tWidth = tArrLengthMax * 10
+    //计算出水印的高度
+    const tHeight = tArrLengthMax * 6 
+    const size={
+        width:tWidth * (1+ percent * base),
+        height:tHeight * (1+ percent * base),
+    }
+    return function(wh){
+        return size[wh]
+    }
+}
