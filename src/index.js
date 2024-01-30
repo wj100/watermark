@@ -1,7 +1,8 @@
 import loadMark from './loadMark'
 import { monitorDom } from './util'
 import { DEFAULT_SETTINGS } from './constants'
-
+/* 存水印配置，以id 为键 */
+export const customSettingMap = new Map()
 /*加载水印-添加浏览器窗口监听事件-添加dom变化监听事件*/
 export function watermark(settings = {}) {
     loadMark(settings)
@@ -32,3 +33,7 @@ export function removeWatermark(watermarkId) {
         watermarkDom.parentNode.removeChild(watermarkDom)
     }
 }
+/* 获取水印配置 */
+export function getWatermarkConfig(watermarkId) {
+    return customSettingMap.get(watermarkId)
+ }

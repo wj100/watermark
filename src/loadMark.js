@@ -1,12 +1,13 @@
 import { canvasTextAutoLine } from './util'
 import { DEFAULT_SETTINGS } from './constants'
-
+import {customSettingMap} from './index'
 /* 加载水印 */
 export default function loadMark (settings) {
 
   // 采用配置项替换默认值(浅拷贝)
   const newSettings = { ...DEFAULT_SETTINGS, ...settings }
-
+    // 存储水印配置
+   customSettingMap.set(newSettings.id, newSettings)
   /* 设置水印的容器 */
   let watermarkParentNode = null
   if (newSettings.parentSelector) {
