@@ -1,14 +1,14 @@
 {
-  "name": "watermark-com",
-  "version": "0.0.4",
+  "name": "watermark-pub",
+  "version": "1.0.1",
   "description": "watermark use in react || vue || AngularJS || jq || Native JS",
+  "author": "wangjun <wj@wangjun.work>",
   "main": "dist/watermark.cjs.js",
   "module": "dist/watermark.esm.js",
   "iife": "dist/watermark.min.js",
   "scripts": {
     "build": "rollup -c"
   },
-  "author": "herongwen",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",

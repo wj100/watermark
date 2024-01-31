@@ -1,5 +1,8 @@
-# watermark-com
-`watermark-com`是一个通用的水印库，项目运用rollup构建，输出iife、cjs、esm三个压缩文件，分别对应了三种使用方式，能够适用于原生js，react、Vue、angular、jq等主流框架。支持监听浏览器resize事件和mutationObserve对象监听DOM变化并做相应的调整。
+# watermark-pub
+`watermark-pub`是一个通用的水印库，项目运用rollup构建，输出iife、cjs、esm三个压缩文件
+鸣谢@saucxs https://github.com/saucxs/watermark-dom
+在watermark-dom基础上增加 支持多行，动态水印，提供根据文本计算水印宽高的方法，可设置水印疏密度...
+![Alt text](image.png)
 
 ## 一、使用方法
 
