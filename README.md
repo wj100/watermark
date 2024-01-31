@@ -22,8 +22,8 @@ watermarkObj.watermark({ text: "测试水印" })
 
 第一步：npm获取水印包
 ```
-npm install watermark-com --save
-# yarn add watermark-com
+npm install watermark-pub --save
+# yarn add watermark-pub
 ```
 
 第二步：引入水印模块 
