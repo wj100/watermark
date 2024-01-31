@@ -1,6 +1,6 @@
 {
   "name": "watermark-pub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "watermark use in react || vue || AngularJS || jq || Native JS",
   "author": "wangjun <wj@wangjun.work>",
   "main": "dist/watermark.cjs.js",
