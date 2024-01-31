@@ -62,10 +62,10 @@ export function getSingleWH(text,percent=0,base=1) {
     const tArr = text.split('-')
     const tArrLength = tArr.map(item => calculateStringLength(item))
     const tArrLengthMax = Math.max(...tArrLength)
-    //计算出水印的宽度
-    const tWidth = tArrLengthMax * 10
-    //计算出水印的高度
-    const tHeight = tArrLengthMax * 6 
+   //计算出水印的宽度
+   const tWidth = tArrLengthMax * 7.5
+   //计算出水印的高度
+   const tHeight = tArrLengthMax * 6
     const size={
         width:tWidth * (1+ percent * base),
         height:tHeight * (1+ percent * base),
