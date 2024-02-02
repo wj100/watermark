@@ -42,7 +42,7 @@ export function getWatermarkConfig(watermarkId) {
  * @param {水印文本 以-为分隔符} text 
  * @param {疏密度} density 0-100 100为最密
  * @param {疏密系数，将density与base相乘} base  
- *          水印疏密系数：基础为1 越大越稀 
+ *          水印疏密系数：默认为1 越大越稀 
             为 1 时，[稀疏] 是 密集的 1+1*1=2
             为 2 时，[稀疏] 是 密集的 1+1*2=3
  * @returns function('width'/'height')
