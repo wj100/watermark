@@ -1,6 +1,7 @@
 const DEFAULT_SETTINGS = {
   id: 'wm_div_id', // 水印总体的id
   text: '测试水印', // 水印的内容
+  color: 'rgba(112, 113, 114, 1)', // 水印的字体颜色
   transparency: 0.15, // 水印透明度
   fontSize: 16, // 水印字体大小，以px为单位
   parentLeft: 0, // 水印整体左边距离

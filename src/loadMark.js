@@ -32,7 +32,7 @@ export default function loadMark (settings) {
   canvas.width = newSettings.singleWidth // 单个水印的宽度
   canvas.height = newSettings.singleHeight // 单个水印的高度
   ctx.font = `normal ${newSettings.fontSize}px 'Microsoft Yahei','serif','sans-serif'` // 设置字体样式，'serif','sans-serif'为通用字体
-  ctx.fillStyle = `rgba(112, 113, 114, ${newSettings.transparency})` // 水印字体颜色
+  ctx.fillStyle = newSettings.color // 水印字体颜色
   ctx.translate(canvas.width / 2, canvas.height / 2)
   ctx.rotate(angle) // 水印偏转角度
   ctx.translate(-canvas.width / 2, -canvas.height / 2)
