@@ -62,5 +62,45 @@ const monitorDom = (parentSelector, callBack) => {
   }
   return true
 }
-
-export { canvasTextAutoLine, monitorDom }
+/**
+ * 动态水印时 计算单个水印的宽高
+ * @param {水印文本 以-为分隔符} text 
+ * @param {疏密度} density 0-100 100为最密
+ * @param {疏密系数，将density与base相乘} base  
+ *          水印疏密系数：默认为1 越大越稀 
+            为 1 时，[稀疏] 是 密集的 1+1*1=2
+            为 2 时，[稀疏] 是 密集的 1+1*2=3
+ * @returns function('width'/'height')
+ */
+const getWH=(text,density=100,base=1)=> {
+    const calculateStringLength = (str) => {
+        let length = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charAt(i);
+            // 使用正则表达式判断是否是中文字符
+            if (/[\u4e00-\u9fa5]/.test(char)) {
+                length += 2;
+            } else {
+                length += 1;
+            }
+        }
+        return length;
+    };
+    //将字符串 text 以-为分隔符分割成数组，取出计算后的最大长度
+    const tArr = text.split('-')
+    const tArrLength = tArr.map(item => calculateStringLength(item))
+    const tArrLengthMax = Math.max(...tArrLength)
+    //计算出水印的宽度
+    const tWidth = tArrLengthMax * 7.5
+    //计算出水印的高度
+    const tHeight = tArrLengthMax * 6
+    const size={
+        width:tWidth * (1+ ((100-density)/100) * base),
+        height:tHeight * (1+ ((100-density)/100) * base),
+    }
+    return function(wh){
+        return size[wh]
+    }
+}
+            
+export { canvasTextAutoLine, monitorDom , getWH}

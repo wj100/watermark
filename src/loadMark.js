@@ -1,8 +1,11 @@
 import { canvasTextAutoLine } from './util'
 import { DEFAULT_SETTINGS } from './constants'
 import {customSettingMap} from './index'
+import {getWH} from './util'
 /* 加载水印 */
 export default function loadMark (settings) {
+    // settings.singleHeight = settings.singleHeight || getWH(settings.text, settings.density, settings.densityBase)
+    // settings.singleWidth = settings.singleWidth || getWH(settings.text, settings.density, settings.densityBase)
 
   // 采用配置项替换默认值(浅拷贝)
   const newSettings = { ...DEFAULT_SETTINGS, ...settings }
