@@ -1,7 +1,8 @@
 {
   "name": "watermark-pub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "watermark use in react || vue || AngularJS || jq || Native JS",
+  "repository":"https://github.com/wj100/watermark",
   "author": "wangjun <wj@wangjun.work>",
   "main": "dist/watermark.cjs.js",
   "module": "dist/watermark.esm.js",

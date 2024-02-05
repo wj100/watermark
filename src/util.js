@@ -23,7 +23,7 @@ const canvasTextAutoLine = parameterObj => {
       ctx.fillText(str.substring(lastSubStrIndex, i + 1), initX, initY)
     }
     //-换行
-    if (str[i] == "-") {
+    if (str[i] == "\n") {
       lineWidth = 0
       ctx.fillText(str.slice(lastSubStrIndex, i), initX, initY)
       initY += lineHeight
@@ -73,6 +73,11 @@ const monitorDom = (parentSelector, callBack) => {
  * @returns function('width'/'height')
  */
 const getWH=(text,density=100,base=1)=> {
+    const calcTextLength = (str) => {
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d');
+        return ctx.measureText(str).width;   
+    };
     const calculateStringLength = (str) => {
         let length = 0;
         for (let i = 0; i < str.length; i++) {
@@ -87,13 +92,13 @@ const getWH=(text,density=100,base=1)=> {
         return length;
     };
     //将字符串 text 以-为分隔符分割成数组，取出计算后的最大长度
-    const tArr = text.split('-')
-    const tArrLength = tArr.map(item => calculateStringLength(item))
+    const tArr = text.split('\n')
+    const tArrLength = tArr.map(item => calcTextLength(item))
     const tArrLengthMax = Math.max(...tArrLength)
     //计算出水印的宽度
-    const tWidth = tArrLengthMax * 7.5
+    const tWidth = tArrLengthMax * 1.5
     //计算出水印的高度
-    const tHeight = tArrLengthMax * 6
+    const tHeight = tArrLengthMax * 1.2
     const size={
         width:tWidth * (1+ ((100-density)/100) * base),
         height:tHeight * (1+ ((100-density)/100) * base),

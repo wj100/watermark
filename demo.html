@@ -6,17 +6,37 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script
-            src="./dist/watermark.min.js"></script>
+    <!-- <script src="./dist/watermark.min.js"></script> -->
 </head>
 
 <body>
-
+<span class="content" style="font-size: 14px;">你的施工方都是</span>
 </body>
 <script>
+    function getTextWidth(str = '') {
+  const dom = document.createElement('span');
+  dom.style.display = 'inline-block';
+  dom.textContent = '天猫旗舰店   49.67%(tmall)';
+  document.body.appendChild(dom);
+  const width = dom.clientWidth;
+  console.log(dom.clientWidth);
+  document.body.removeChild(dom);
+  return width;
+}
+    const str='你的施工方都是'
+    //content写入 str
+    const content = document.querySelector('.content')
+    content.textContent = str
+    console.log(1111,getTextWidth(str))
+    content.innerHTML = str
+    const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d');
+        console.log(2222,ctx.measureText(str).width)
+</script>
+<!-- <script>
     watermarkObj.watermark({
         id: 'sdfsdgdrf', // 水印总体的id
-        text: '汪骏@XXX科技有限公司汪骏@XXX科技有限公司汪骏@XXX科技有限公司-wangjun123 20241212 wj12345-自定义信息自定义信息自定义信息', // 水印的内容 使用\n换行
+        text: '汪骏@XXXX科技公司-wangjun自定自定义信息12320241212wj12345-自定自定义信息', // 水印的内容 使用\n换行
         color: `rgba(112, 113, 114, .1)`,
         density: 50,
         densityBase: 1,
@@ -31,6 +51,6 @@
         // singleHeight: 110, // 单个水印长度
         // slope: -10, // 水印倾斜度数
     })
-</script>
+</script> -->
 
 </html>

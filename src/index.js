@@ -5,7 +5,6 @@ import { DEFAULT_SETTINGS } from './constants'
 export const customSettingMap = new Map()
 /*加载水印-添加浏览器窗口监听事件-添加dom变化监听事件*/
 export function watermark(settings = {}) {
-    console.log('settings',settings)
     settings.singleHeight = settings.singleHeight || getWH(settings.text, settings.density, settings.densityBase)('height')
     settings.singleWidth = settings.singleWidth || getWH(settings.text, settings.density, settings.densityBase)('width')
     loadMark(settings)
