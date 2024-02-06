@@ -103,4 +103,4 @@ getWatermarkConfig(watermarkId)
 #### 动态计算水印宽高
 
 多行不固定文本时根据文字动态计算水印宽高 可配置水印疏密度
-getSingleWH(text,density,densityBase)('width')
+getSingleWH(text,density?,densityBase?)('width')
