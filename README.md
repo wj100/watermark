@@ -3,7 +3,7 @@
 `watermark-pub`是一个通用的水印库，项目运用 rollup 构建，输出 iife、cjs、esm 三个压缩文件
 鸣谢@saucxs https://github.com/saucxs/watermark-dom
 在 watermark-dom 基础上增加 支持多行，动态水印，提供根据文本计算水印宽高的方法，可设置水印疏密度...
-![Alt text](https://raw.githubusercontent.com/wj100/cdn/main/img/watermark.png)
+![Alt text](https://img-blog.csdnimg.cn/direct/50ff3182fabb414da7c6e838d4de03bc.gif#pic_center)
 
 ## 一、使用方法
 
