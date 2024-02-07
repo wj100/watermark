@@ -1,12 +1,13 @@
 {
   "name": "watermark-pub",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "watermark use in react || vue || AngularJS || jq || Native JS",
   "repository":"https://github.com/wj100/watermark",
   "author": "wangjun <wj@wangjun.work>",
   "main": "dist/watermark.cjs.js",
   "module": "dist/watermark.esm.js",
   "iife": "dist/watermark.min.js",
+  "keywords": ["watermark", "react", "vue", "AngularJS", "jq", "Native JS","水印"],
   "scripts": {
     "build": "rollup -c"
   },
