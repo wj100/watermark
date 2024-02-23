@@ -11,6 +11,8 @@ const canvasTextAutoLine = parameterObj => {
   let { str, ctx, initX, initY, lineHeight, canvasWidth } = parameterObj
   let lineWidth = 0
   let lastSubStrIndex = 0
+    //如果 str 以换行符结尾，则去掉换行符
+    str=str.replace(/\n+$/g, '')
   for (let i = 0; i < str.length; i++) {
     lineWidth += ctx.measureText(str[i]).width
     if (lineWidth > canvasWidth - 50) { // 考虑边界需加50的buffer
